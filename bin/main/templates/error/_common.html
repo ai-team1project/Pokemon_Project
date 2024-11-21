@@ -1,0 +1,15 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="common">
+    <img th:src="@{/front/images/errors/{status}.png(status=${status})}">
+    <h1 th:text="${message}">
+        <th:block th:text="${status}"></th:block>
+        <th:block th:text="${method !=null}" th:text="${method}"></th:block>
+        <th:block th:text="${path}"></th:block>
+        <th:block th:text="${querystring !=null}" th:text="${#strings.concat('?',quertstring)}"></th:block>
+    </h1>
+
+</th:block>
+
+</html>
